@@ -72,11 +72,21 @@ router.post("/", (req, res) => {
 // update product
 router.put("/:id", (req, res) => {
   // update product data
-  Product.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
+  Product.update(
+    req.body,
+    // {
+    //   product_name: req.body.product_name,
+    //   price: req.body.price,
+    //   stock: req.body.stock,
+    //   tagIds: req.body.tagIds,
+    //   category_id: req.body.category_id,
+    // },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
     .then((product) => {
       // find all associated tags from ProductTag
       return ProductTag.findAll({ where: { product_id: req.params.id } });
@@ -101,7 +111,7 @@ router.put("/:id", (req, res) => {
     })
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });

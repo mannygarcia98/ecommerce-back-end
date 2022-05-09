@@ -25,10 +25,11 @@
 2. Clone the repository to your local machine
 3. Run the command `npm install`
 4. Start MySQL through the command line in the root folder and run `source db/schema.sql` to create the Ecommerce database.
-5. Run `npm run seed` to seed the database
-6. Run `npm start` to start the server.
-7. View the endpoints in the folder routes/api/index/ to see all the possible endpoints.
-8. Endpoints can be tested using Insomnia referring to the code comments for help with sending data in the body for POST and PUT routes. 
+5. Create a .env file with the database titled "ecommerce_db" and your MySQL credentials.
+6. Run `npm run seed` to seed the database
+7. Run `npm start` to start the server.
+8. View the endpoints in the folder routes/api/index/ to see all the possible endpoints.
+9. Endpoints can be tested using Insomnia referring to the code comments for help with sending data in the body for POST and PUT routes. 
 ## Usage
 
 This application can be used as a starting point for an ecommerce site. It uses Sequelize models to separate product data into separate tables for keeping accurate records.
